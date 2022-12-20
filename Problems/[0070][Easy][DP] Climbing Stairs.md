@@ -16,7 +16,8 @@ While the number of ways to end with `2` steps is equal to the number of ways to
 This is equivalent to the number of ways to climb to `n-2` steps.
 
 ## Naive Solution (Recursion):
-`class Solution {
+```
+class Solution {
     public int climbStairs(int n) {
         if (n == 1) {
             return 1;
@@ -26,13 +27,14 @@ This is equivalent to the number of ways to climb to `n-2` steps.
             return climbStairs(n-1) + climbStairs(n-2);
         }
     }
-}`
-
+}
+```
 Simple recursive solution however this is very time inefficient with O(N^2).
 We observe that there are repeat function calls and this can be improved through memoisation/dynamic programming.
 
 ## Memoisation:
-`class Solution {
+```
+class Solution {
     public static int[] storage;
     public int climbStairs(int n) {
         if (n == 1) {
@@ -54,10 +56,12 @@ We observe that there are repeat function calls and this can be improved through
             return storage[n-1];
         }
     }
-}`
+}
+```
 
 ## Dynamic Programming:
-`class Solution {
+```
+class Solution {
     public int climbStairs(int n) {
         if (n == 1) {
             return 1;
@@ -70,4 +74,5 @@ We observe that there are repeat function calls and this can be improved through
         }
         return storage[n-1];
     }
-}`
+}
+```
